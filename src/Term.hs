@@ -57,6 +57,7 @@ eval x =
       go (Minus t) = negate (go t)
       go (Add s t) = go s + go t
       go (Mult s t) = go s + go t
+      go Hole = error "Found Hole: you never should be here!"
   in go
      
 
